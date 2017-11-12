@@ -56,6 +56,7 @@ func SetTelegramIDForUser(telegramID, databaseID int) error {
 
 type User struct {
 	ID int `json:"id"`
+	Username string
 }
 
 type UserResponse struct {

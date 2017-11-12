@@ -5,9 +5,9 @@ import (
 )
 
 func MainMenu() interface{} {
-	createButton := tg.NewKeyboardButton("/crea gruppo")
-	myGroupsButton := tg.NewKeyboardButton("/i miei gruppi")
-	searchButton := tg.NewKeyboardButton("/gruppi vicino a me")
+	createButton := tg.NewKeyboardButton("Crea Gruppo")
+	myGroupsButton := tg.NewKeyboardButton("I Miei Gruppi")
+	searchButton := tg.NewKeyboardButton("Gruppi Vicino A Me")
 	markup := tg.NewReplyKeyboard(
 		tg.NewKeyboardButtonRow(createButton),
 		tg.NewKeyboardButtonRow(myGroupsButton),
