@@ -31,8 +31,12 @@ func LoginUser(username, password string, u tg.Update, bot *tg.BotAPI) {
 		return
 	}
 
-	msg := tg.NewMessage(u.Message.Chat.ID, "Bentornato " + u.Message.From.UserName + "! Come posso aiutarti?")
+	msg := tg.NewMessage(u.Message.Chat.ID, "Bentornato " + u.Message.From.UserName + "!")
 	msg.ReplyMarkup = tg.NewRemoveKeyboard(true)
+	bot.Send(msg)
+
+	msg = tg.NewMessage(u.Message.Chat.ID, "Come posso aiutarti?")
+	msg.ReplyMarkup = actions.MainMenu()
 	bot.Send(msg)
 }
 

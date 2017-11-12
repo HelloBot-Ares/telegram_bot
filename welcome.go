@@ -11,6 +11,9 @@ func Welcome(u tg.Update, bot *tg.BotAPI) {
 	if api.CheckTelegramUserPresence(u.Message.From.ID) {
 		msg := tg.NewMessage(u.Message.Chat.ID, fmt.Sprintf("Bentornato %v!", u.Message.From.UserName))
 		bot.Send(msg)
+		msg = tg.NewMessage(u.Message.Chat.ID, "Come posso aiutarti?")
+		msg.ReplyMarkup = actions.MainMenu()
+		bot.Send(msg)
 		return
 	}
 
