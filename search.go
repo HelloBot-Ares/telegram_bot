@@ -2,7 +2,7 @@ package main
 
 import (
 	tg "gopkg.in/telegram-bot-api.v4"
-	"github.com/rentziass/ares/telegram_bot/api"
+	"github.com/rentziass/telegram_bot/api"
 	"fmt"
 )
 

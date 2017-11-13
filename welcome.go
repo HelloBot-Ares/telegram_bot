@@ -2,9 +2,9 @@ package main
 
 import (
 	tg "gopkg.in/telegram-bot-api.v4"
-	"github.com/rentziass/ares/telegram_bot/api"
+	"github.com/rentziass/telegram_bot/api"
 	"fmt"
-	"github.com/rentziass/ares/telegram_bot/actions"
+	"github.com/rentziass/telegram_bot/actions"
 )
 
 func Welcome(u tg.Update, bot *tg.BotAPI) {

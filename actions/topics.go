@@ -1,7 +1,7 @@
 package actions
 
 import (
-	"github.com/rentziass/ares/telegram_bot/api"
+	"github.com/rentziass/telegram_bot/api"
 	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
 )

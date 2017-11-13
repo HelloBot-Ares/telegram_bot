@@ -5,8 +5,8 @@ import (
 	tg "gopkg.in/telegram-bot-api.v4"
 	"github.com/joho/godotenv"
 	"os"
-	"github.com/rentziass/ares/telegram_bot/api"
-	"github.com/rentziass/ares/telegram_bot/actions"
+	"github.com/rentziass/telegram_bot/api"
+	"github.com/rentziass/telegram_bot/actions"
 	"strings"
 )
 
