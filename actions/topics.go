@@ -1,13 +1,14 @@
 package actions
 
 import (
-	"github.com/rentziass/telegram_bot/api"
-	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
+
+	"github.com/HelloBot-Ares/telegram_bot/api"
+	"gopkg.in/telegram-bot-api.v4"
 )
 
 func TopicKeyboard(position int, topics []api.Topic) interface{} {
-	visibleTopics := topics[position:position+5]
+	visibleTopics := topics[position : position+5]
 	buttons := []tgbotapi.KeyboardButton{}
 	for _, t := range visibleTopics {
 		buttons = append(buttons, tgbotapi.NewKeyboardButton(fmt.Sprintf(`/%v %v`, t.ID, t.Name)))

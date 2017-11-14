@@ -1,10 +1,11 @@
 package main
 
 import (
-	tg "gopkg.in/telegram-bot-api.v4"
-	"github.com/rentziass/telegram_bot/api"
 	"log"
-	"github.com/rentziass/telegram_bot/actions"
+
+	"github.com/HelloBot-Ares/telegram_bot/actions"
+	"github.com/HelloBot-Ares/telegram_bot/api"
+	tg "gopkg.in/telegram-bot-api.v4"
 )
 
 func LoginUser(username, password string, u tg.Update, bot *tg.BotAPI) {
@@ -21,7 +22,6 @@ func LoginUser(username, password string, u tg.Update, bot *tg.BotAPI) {
 		return
 	}
 
-
 	// If login is successfull we set Telegram ID for current user via API
 	// and we won't need to do it again
 	err = api.SetTelegramIDForUser(u.Message.From.ID, databaseID)
@@ -31,7 +31,7 @@ func LoginUser(username, password string, u tg.Update, bot *tg.BotAPI) {
 		return
 	}
 
-	msg := tg.NewMessage(u.Message.Chat.ID, "Bentornato " + u.Message.From.UserName + "!")
+	msg := tg.NewMessage(u.Message.Chat.ID, "Bentornato "+u.Message.From.UserName+"!")
 	msg.ReplyMarkup = tg.NewRemoveKeyboard(true)
 	bot.Send(msg)
 

@@ -1,9 +1,10 @@
 package main
 
 import (
-	tg "gopkg.in/telegram-bot-api.v4"
-	"github.com/rentziass/telegram_bot/api"
 	"fmt"
+
+	"github.com/HelloBot-Ares/telegram_bot/api"
+	tg "gopkg.in/telegram-bot-api.v4"
 )
 
 func SearchEvents(u tg.Update, bot *tg.BotAPI) {
@@ -24,7 +25,6 @@ func SearchEvents(u tg.Update, bot *tg.BotAPI) {
 			msgText = msgText + fmt.Sprintf(searchTemplate, e.ID, e.Subject, e.Topic.Name, e.Owner.Username, e.PlaceName, e.StartingAt, e.PlaceAddress, len(e.Participants), e.MaxParticipants)
 		}
 	}
-
 
 	fmt.Println(msgText)
 

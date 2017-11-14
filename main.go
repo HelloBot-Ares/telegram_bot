@@ -2,29 +2,30 @@ package main
 
 import (
 	"log"
-	tg "gopkg.in/telegram-bot-api.v4"
-	"github.com/joho/godotenv"
 	"os"
-	"github.com/rentziass/telegram_bot/api"
-	"github.com/rentziass/telegram_bot/actions"
 	"strings"
+
+	"github.com/HelloBot-Ares/telegram_bot/actions"
+	"github.com/HelloBot-Ares/telegram_bot/api"
+	"github.com/joho/godotenv"
+	tg "gopkg.in/telegram-bot-api.v4"
 )
 
 type LoginProcess struct {
-	Started bool
-	Username string
+	Started          bool
+	Username         string
 	UsernameInserted bool
-	Password string
+	Password         string
 	PasswordInserted bool
 }
 
 type EventCreationProcess struct {
-	TopicID string
+	TopicID    string
 	SeenTopics int
-	TopicSet bool
-	Subject string
+	TopicSet   bool
+	Subject    string
 	SubjectSet bool
-	PlaceName string
+	PlaceName  string
 }
 
 var loginProcesses = map[int]*LoginProcess{}
@@ -112,7 +113,7 @@ func main() {
 			// Otherwise it's a username
 			p.Username = update.Message.Text
 			p.UsernameInserted = true
-			msg := tg.NewMessage(update.Message.Chat.ID, "Username: " + loginProcesses[update.Message.From.ID].Username + ". Per favore, inserisci ora la tua password. Non dimenticarti di cancellare quel messaggio dalla chat 🙌🏼")
+			msg := tg.NewMessage(update.Message.Chat.ID, "Username: "+loginProcesses[update.Message.From.ID].Username+". Per favore, inserisci ora la tua password. Non dimenticarti di cancellare quel messaggio dalla chat 🙌🏼")
 			bot.Send(msg)
 			continue
 		}
@@ -171,7 +172,7 @@ func main() {
 				continue
 			}
 
-			msg := tg.NewMessage(update.Message.Chat.ID, "Congratulazioni! Ti sei unito a " + event.Subject + "!")
+			msg := tg.NewMessage(update.Message.Chat.ID, "Congratulazioni! Ti sei unito a "+event.Subject+"!")
 			bot.Send(msg)
 			continue
 		}
